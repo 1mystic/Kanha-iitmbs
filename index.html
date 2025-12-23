@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanha Student House</title>
+
+    <link rel="icon" type="image/webp" href="/logo.webp">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Lato:wght@300;400;700;900&family=Space+Grotesk:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet" />
+
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+
+    <!-- Global Styles & Config -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#D4AF37", // Deep Royal Gold
+                        secondary: "#800000", // Deep Maroon
+                        tertiary: "#1A4D2E", // Forest Green
+                        accent: "#1A1A1A", // Charcoal Black
+
+                        // Background variations
+                        "paper": "#F5F0E1",
+                        "paper-light": "#F9F7F2",
+                        "paper-dark": "#1C1C1C",
+
+                        // Surface variations
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#262626",
+
+                        // Text variations
+                        "text-main-light": "#1A1A1A",
+                        "text-main-dark": "#F5F5F5",
+
+                        // Jungle theme specific
+                        jungle: "#1a2e1a",
+                    },
+                    fontFamily: {
+                        display: ["Cinzel", "serif"],
+                        body: ["Lato", "sans-serif"],
+                        sans: ["Space Grotesk", "sans-serif"]
+                    },
+                    backgroundImage: {
+                        'paper-texture': "url(\"data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E\")",
+                        'stamp-pattern': "radial-gradient(circle, transparent 50%, #D4AF37 50%)"
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'enter': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        fadeInUp: {
+                            'from': { opacity: 0, transform: 'translateY(20px)' },
+                            'to': { opacity: 1, transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        /* Custom Utilities */
+        .stamp-edge {
+            --mask: radial-gradient(10px at 10px 10px, #0000 98%, #000) -10px -10px;
+            -webkit-mask: var(--mask);
+            mask: var(--mask);
+            -webkit-mask-size: 20px 20px;
+            mask-size: 20px 20px;
+            -webkit-mask-composite: source-over;
+            mask-composite: add;
+        }
+
+        .stamp-container {
+            position: relative;
+            filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.15));
+            transition: transform 0.3s ease;
+        }
+
+        .stamp-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .paper-shadow {
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15),
+                0 2px 2px rgba(0, 0, 0, 0.15),
+                0 4px 4px rgba(0, 0, 0, 0.15),
+                0 8px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .tape {
+            background-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(2px);
+            transform: rotate(-2deg);
+            border-left: 1px solid rgba(255, 255, 255, 0.3);
+            border-right: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .dark .tape {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        /* Staggered Animation Utilities */
+        .animate-enter {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+
+        .delay-100 {
+            animation-delay: 100ms;
+        }
+
+        .delay-200 {
+            animation-delay: 200ms;
+        }
+
+        .delay-300 {
+            animation-delay: 300ms;
+        }
+
+        .delay-500 {
+            animation-delay: 500ms;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #F4F1EA;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 5px;
+        }
+
+        .dark ::-webkit-scrollbar-track {
+            background: #1A1A1A;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background: #800000;
+        }
+    </style>
+    <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0"
+  }
+}
+</script>
+    <link rel="stylesheet" href="/index.css">
+</head>
+
+<body
+    class="bg-paper-light dark:bg-accent text-text-main-light dark:text-text-main-dark transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>
