@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Style Guide | Kanha Student House</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Lato:wght@300;400;700;900&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#D4AF37", // Deep Royal Gold
+                        secondary: "#800000", // Deep Maroon
+                        accent: "#1A1A1A", // Charcoal Black
+                        "paper-light": "#F4F1EA", // Warm Paper
+                        "paper-dark": "#202020",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#2A2A2A",
+                    },
+                    fontFamily: {
+                        display: ["Cinzel", "serif"],
+                        body: ["Lato", "sans-serif"]
+                    },
+                }
+            }
+        };
+    </script>
+    <style>
+        .stamp-edge {
+            --mask: radial-gradient(8px at 8px 8px, #0000 98%, #000) -8px -8px;
+            -webkit-mask: var(--mask);
+            mask: var(--mask);
+            -webkit-mask-size: 16px 16px;
+            mask-size: 16px 16px;
+            -webkit-mask-composite: source-over;
+            mask-composite: add;
+        }
+
+        .paper-shadow {
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15),
+                0 2px 2px rgba(0, 0, 0, 0.15),
+                0 4px 4px rgba(0, 0, 0, 0.15),
+                0 8px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .tape {
+            background-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(2px);
+            transform: rotate(-2deg);
+            border-left: 1px solid rgba(255, 255, 255, 0.3);
+            border-right: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .noise-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+
+<body class="bg-paper-light font-body text-gray-800 min-h-screen relative overflow-x-hidden">
+    <div class="fixed inset-0 pointer-events-none noise-overlay z-0 opacity-60 mix-blend-multiply"></div>
+
+    <div class="max-w-5xl mx-auto px-6 py-20 relative z-10">
+        <header class="mb-20 text-center">
+            <div class="inline-flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 bg-secondary text-white flex items-center justify-center rounded-lg stamp-edge">
+                    <span class="material-symbols-outlined text-3xl">pets</span>
+                </div>
+                <h1 class="font-display text-5xl font-black text-secondary tracking-tight">KANHA <span class="text-primary">DESIGN KIT</span></h1>
+            </div>
+            <p class="text-xl text-gray-600 font-serif italic max-w-2xl mx-auto">"A cohesive visual language for the Royal Bengal lineage."</p>
+        </header>
+
+        <!-- Color Palette -->
+        <section class="mb-20">
+            <h2 class="font-display text-2xl font-bold mb-8 border-b-2 border-primary/30 pb-2 uppercase tracking-widest">Color Palette</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="space-y-4">
+                    <div class="h-32 bg-primary rounded-2xl shadow-lg border-2 border-white flex items-end p-4">
+                        <span class="text-white font-bold drop-shadow-md">#D4AF37</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg">Deep Royal Gold</h3>
+                        <p class="text-sm text-gray-500">Primary brand color. High energy and royalty.</p>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="h-32 bg-secondary rounded-2xl shadow-lg border-2 border-white flex items-end p-4">
+                        <span class="text-white font-bold drop-shadow-md">#800000</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg">Deep Maroon</h3>
+                        <p class="text-sm text-gray-500">Secondary brand color. Tradition and strength.</p>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="h-32 bg-accent rounded-2xl shadow-lg border-2 border-white flex items-end p-4">
+                        <span class="text-white font-bold drop-shadow-md">#1A1A1A</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg">Charcoal Black</h3>
+                        <p class="text-sm text-gray-500">Accent color. Sophistication and mystery.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Typography -->
+        <section class="mb-20">
+            <h2 class="font-display text-2xl font-bold mb-8 border-b-2 border-primary/30 pb-2 uppercase tracking-widest">Typography</h2>
+            <div class="space-y-12">
+                <div class="bg-white p-8 rounded-3xl paper-shadow border border-gray-100">
+                    <span class="text-xs font-bold text-primary uppercase tracking-[0.3em] block mb-4">Display / Header</span>
+                    <h3 class="font-display text-6xl font-black text-secondary leading-tight mb-4">Cinzel Precise</h3>
+                    <p class="font-display text-2xl text-gray-600 mb-6">Regal, Classic, Authoritative</p>
+                    <div class="space-y-2 text-gray-400 font-display">
+                        <p class="text-4xl">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+                        <p class="text-4xl">abcdefghijklmnopqrstuvwxyz</p>
+                        <p class="text-4xl">1234567890!@#$%^&*()</p>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-3xl paper-shadow border border-gray-100">
+                    <span class="text-xs font-bold text-primary uppercase tracking-[0.3em] block mb-4">Body / User Interface</span>
+                    <h3 class="font-body text-4xl font-bold text-gray-800 leading-tight mb-4">Lato Sans</h3>
+                    <p class="font-body text-xl text-gray-600 mb-6">Modern, Friendly, Readable</p>
+                    <div class="space-y-2 text-gray-400 font-body">
+                        <p class="text-3xl">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+                        <p class="text-3xl">abcdefghijklmnopqrstuvwxyz</p>
+                        <p class="text-3xl">1234567890!@#$%^&*()</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Components -->
+        <section class="mb-20">
+            <h2 class="font-display text-2xl font-bold mb-8 border-b-2 border-primary/30 pb-2 uppercase tracking-widest">Core Components</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <span class="text-xs font-bold text-primary uppercase tracking-[0.3em] block">Buttons</span>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="bg-secondary text-white font-display font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-secondary/90 transition-all border-b-4 border-black/20">
+                            Primary Action
+                        </button>
+                        <button class="bg-primary text-black font-display font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-primary/90 transition-all border-b-4 border-black/20">
+                            Gold Highlight
+                        </button>
+                        <button class="border-2 border-secondary text-secondary font-display font-bold py-3 px-8 rounded-lg hover:bg-secondary/5 transition-all">
+                            Ghost Button
+                        </button>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <span class="text-xs font-bold text-primary uppercase tracking-[0.3em] block">Stamp Card</span>
+                    <div class="relative max-w-sm group">
+                        <div class="tape w-24 h-6 absolute -top-3 left-1/2 -translate-x-1/2 z-20"></div>
+                        <div class="bg-white p-3 shadow-xl transform rotate-1 group-hover:rotate-0 transition-transform duration-500 stamp-edge">
+                            <div class="h-48 bg-gray-200 overflow-hidden mb-4 relative">
+                                <img src="https://images.unsplash.com/photo-1502404505341-94943f7ed064?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Tiger">
+                                <div class="absolute inset-0 bg-secondary/20 mix-blend-multiply"></div>
+                            </div>
+                            <div class="text-center font-display pb-4">
+                                <h4 class="font-bold text-lg text-secondary uppercase">The Bengal Pride</h4>
+                                <p class="text-[0.6rem] text-gray-400 tracking-widest uppercase">Est. 2012</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="mt-40 pt-20 border-t border-gray-200 text-center">
+            <p class="text-sm text-gray-400 font-display font-bold uppercase tracking-[0.5em]">&copy; 2025 Kanha House IITM BS
+                
+            </p>
+        </footer>
+    </div>
+
+</body>
+
+</html>
